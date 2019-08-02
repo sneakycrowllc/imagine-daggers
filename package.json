@@ -1,0 +1,45 @@
+{
+  "name": "imagine-daggers",
+  "version": "0.1.0",
+  "description": "A platform for turning your sessions into stories",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --mode production",
+    "start": "webpack-dev-server --mode production"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sneakycrow/imagine-daggers.git"
+  },
+  "keywords": [
+    "blog",
+    "role",
+    "playing",
+    "rpg",
+    "dnd",
+    "imagine",
+    "daggers"
+  ],
+  "author": "Zachary E Sohovich",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sneakycrow/imagine-daggers/issues"
+  },
+  "homepage": "https://github.com/sneakycrow/imagine-daggers#readme",
+  "dependencies": {
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.6",
+    "html-loader": "^0.5.5",
+    "html-webpack-plugin": "^3.2.0",
+    "webpack": "^4.39.1",
+    "webpack-cli": "^3.3.6",
+    "webpack-dev-server": "^3.7.2"
+  }
+}
