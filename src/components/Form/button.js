@@ -26,18 +26,20 @@ const StyledButton = styled.button`
 
 const Button = (props) => {
   return (
-    <StyledButton type={props.type}>{props.label}</StyledButton>
+    <StyledButton type={props.type}>{props.isLoading ? 'Loading...' : props.label}</StyledButton>
   )
 }
 
 Button.propTypes = {
   type: PropTypes.oneOf(['submit', 'button']),
-  label: PropTypes.string
+  label: PropTypes.string,
+  isLoading: PropTypes.bool
 }
 
 Button.defaultProps = {
   type: 'button',
-  label: 'Button'
+  label: 'Button',
+  isLoading: false
 }
 
 export default Button;

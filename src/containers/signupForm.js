@@ -18,6 +18,8 @@ const StyledSignupForm = styled.div`
 
 const SignupForm = () => {
   const [emailValue, setEmailValue] = useState('');
+  const [isSignupSuccessful, setSignupSuccesful] = useState();
+  const [isSendingData, setSendingData] = useState(false);
 
   const handleChange = newValue => {
     setEmailValue(() => newValue);
@@ -26,12 +28,28 @@ const SignupForm = () => {
   const handleSubmit = event => {
     event.preventDefault();
     // Form only submits email right now, so we'll just pull the state and submit that
+    setSendingData(() => true);
     fetch(`${process.env.API_URL}/signup`, {
+      headers: {
+        'Content-Type': 'application/json'
+      },
       method: 'POST',
       body: JSON.stringify({
         email: emailValue
       })
-    }).then(res => console.log(res));
+    })
+      .then(res => {
+        if (res.status === 200) {
+          setSignupSuccesful(true);
+        } else {
+          setResponseStatus(false);
+        }
+        setSendingData(() => false);
+      })
+      .catch(err => {
+        setSignupSuccesful(false);
+        setSendingData(() => false);
+      });
   };
 
   return (
@@ -46,7 +64,7 @@ const SignupForm = () => {
           placeholder="email@example.com"
           onChange={event => handleChange(event.target.value)}
         />
-        <Button type="submit" label="Submit" />
+        <Button type="submit" label={isSignupSuccessful ? 'Thank You!' : 'Submit'} isLoading={isSendingData} />
       </form>
     </StyledSignupForm>
   );
