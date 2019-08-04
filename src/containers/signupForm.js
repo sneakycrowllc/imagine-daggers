@@ -18,7 +18,7 @@ const StyledSignupForm = styled.div`
 
 const SignupForm = () => {
   const [emailValue, setEmailValue] = useState('');
-  const [isSignupSuccessful, setSignupSuccesful] = useState();
+  const [isSignupSuccessful, setSignupSuccesful] = useState(false);
   const [isSendingData, setSendingData] = useState(false);
 
   const handleChange = newValue => {
@@ -41,8 +41,14 @@ const SignupForm = () => {
       .then(res => {
         if (res.status === 200) {
           setSignupSuccesful(true);
+          // Reset state
+          setTimeout(() => {
+            setEmailValue('');
+            setSignupSuccesful(() => false);
+            setSendingData(() => false);
+          }, 2500);
         } else {
-          setResponseStatus(false);
+          setSignupSuccesful(false);
         }
         setSendingData(() => false);
       })
@@ -64,7 +70,11 @@ const SignupForm = () => {
           placeholder="email@example.com"
           onChange={event => handleChange(event.target.value)}
         />
-        <Button type="submit" label={isSignupSuccessful ? 'Thank You!' : 'Submit'} isLoading={isSendingData} />
+        <Button
+          type="submit"
+          label={isSignupSuccessful ? 'Thank You!' : 'Submit'}
+          isLoading={isSendingData}
+        />
       </form>
     </StyledSignupForm>
   );
