@@ -1,4 +1,5 @@
 const HtmlWebPackPlugin = require("html-webpack-plugin");
+const Dotenv = require('dotenv-webpack');
 
 module.exports = {
   entry: './src/index.js',
@@ -12,7 +13,19 @@ module.exports = {
         }
       },
       {
+        test: /\.(png|jpg|gif)$/i,
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+              limit: 8192,
+            },
+          },
+        ],
+      },
+      {
         test: /\.html$/,
+        exclude: /node_modules/,
         use: [
           {
             loader: "html-loader"
@@ -25,6 +38,10 @@ module.exports = {
     new HtmlWebPackPlugin({
       template: "./src/index.html",
       filename: "./index.html"
-    })
-  ]
+    }),
+    new Dotenv()
+  ],
+  devServer: {
+    port: 8000
+  }
 };
