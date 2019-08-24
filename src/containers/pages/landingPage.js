@@ -2,9 +2,9 @@ import React from 'react';
 import styled from '@emotion/styled';
 import { lighten } from 'polished';
 
-import SignupForm from './signupForm';
+import SubscriptionForm from '../forms/subscribe';
 
-import HorizontalLogo from '../static/images/logos/horizontal_logo_color.png';
+import HorizontalLogo from '../../static/images/logos/horizontal_logo_color.png';
 
 const StyledLandingPage = styled.div`
   height: 100vh;
@@ -23,6 +23,10 @@ const StyledHorizontalLogo = styled.div`
   img {
     max-width: 800px;
     height: auto;
+    width: 100%;
+  }
+  @media screen and (max-width: 780px) {
+    grid-column: 1 / span 12;
   }
 `;
 
@@ -33,6 +37,9 @@ const StyledSignupContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
+  @media screen and (max-width: 780px) {
+    grid-column: 2 / span 8;
+  }
 `;
 
 const StyledFAQ = styled.div`
@@ -94,7 +101,7 @@ const LandingPage = () => {
             experience over again, even when your campaign is complete
           </p>
         </StyledFAQ>
-        <SignupForm />
+        <SubscriptionForm />
       </StyledSignupContainer>
       <StyledSocialList>
           <li>

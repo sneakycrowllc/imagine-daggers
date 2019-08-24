@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import styled from '@emotion/styled';
-import Input from '../components/Form/input';
-import Button from '../components/Form/button';
+import Input from '../../components/Form/input';
+import Button from '../../components/Form/button';
 
-const StyledSignupForm = styled.div`
+const StyledSubscriptionForm = styled.div`
   h3 {
     margin-bottom: 16px;
   }
@@ -16,7 +16,7 @@ const StyledSignupForm = styled.div`
   }
 `;
 
-const SignupForm = () => {
+const SubscriptionForm = () => {
   const [emailValue, setEmailValue] = useState('');
   const [isSignupSuccessful, setSignupSuccesful] = useState(false);
   const [isSendingData, setSendingData] = useState(false);
@@ -29,7 +29,7 @@ const SignupForm = () => {
     event.preventDefault();
     // Form only submits email right now, so we'll just pull the state and submit that
     setSendingData(() => true);
-    fetch(`${process.env.API_URL}/signup`, {
+    fetch(`${process.env.API_URL}/subscribe`, {
       headers: {
         'Content-Type': 'application/json'
       },
@@ -59,7 +59,7 @@ const SignupForm = () => {
   };
 
   return (
-    <StyledSignupForm>
+    <StyledSubscriptionForm>
       <h3>Signup for more information</h3>
       <form onSubmit={event => handleSubmit(event)}>
         <Input
@@ -76,8 +76,8 @@ const SignupForm = () => {
           isLoading={isSendingData}
         />
       </form>
-    </StyledSignupForm>
+    </StyledSubscriptionForm>
   );
 };
 
-export default SignupForm;
+export default SubscriptionForm;
