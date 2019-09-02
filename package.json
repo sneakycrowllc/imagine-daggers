@@ -10,13 +10,16 @@
   "dependencies": {
     "@emotion/core": "^10.0.16",
     "@emotion/styled": "^10.0.15",
+    "babel-plugin-emotion": "^10.0.17",
     "dotenv": "^8.1.0",
     "emotion-reset": "^2.0.2",
     "emotion-theming": "^10.0.14",
     "next": "9.0.5",
+    "niceware": "^1.0.7",
     "polished": "^3.4.1",
     "react": "16.9.0",
-    "react-dom": "16.9.0"
+    "react-dom": "16.9.0",
+    "unique-names-generator": "^3.0.0"
   },
   "devDependencies": {
     "@types/node": "^12.7.3",
