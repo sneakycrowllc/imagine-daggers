@@ -109,6 +109,9 @@ const StyledRegister = styled.div`
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   grid-column-gap: 24px;
+  @media screen and (max-width: 768px) {
+    grid-template-columns: repeat(4, 1fr);
+  }
 `;
 
 const StyledForm = styled.form`
@@ -117,10 +120,13 @@ const StyledForm = styled.form`
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
-  width: 100%;
+  width: auto;
   padding: 16px;
   > * {
     margin-top: 32px;
+  }
+  @media screen and (max-width: 768px) {
+    grid-column: 1 / span 4;
   }
 `;
 

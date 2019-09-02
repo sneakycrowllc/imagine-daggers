@@ -4,7 +4,7 @@ import styled from '@emotion/styled';
 import { darken } from 'polished';
 
 const StyledInput = styled.div`
-  width: 100%;
+  width: auto;
   border-radius: 2px;
   position: relative;
   border: 1px solid ${props => props.theme.colors.SILVERRUST};
