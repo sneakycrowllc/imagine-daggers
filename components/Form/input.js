@@ -1,17 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from '@emotion/styled';
+import { darken } from 'polished';
 
 const StyledInput = styled.div`
   width: 100%;
   border-radius: 2px;
   position: relative;
   border: 1px solid ${props => props.theme.colors.SILVERRUST};
-  padding: 8px;
+  padding: 10px;
   min-height: 24px;
   label {
     font-weight: bold;
-    transform: translateY(-14px);
+    transform: translateY(-16px);
     position: absolute;
     background: ${props => props.theme.colors.SNOW};
     text-transform: uppercase;
@@ -19,9 +20,13 @@ const StyledInput = styled.div`
   input {
     border: none;
     width: 100%;
-    padding: 8px 0;
     height: 100%;
     font-size: 1em;
+    color: ${props => darken(0.5, props.theme.colors.SILVERRUST)};
+    &::placeholder {
+      color: ${props => darken(0.1, props.theme.colors.SILVERRUST)};
+      font-style: italic;
+    }
   }
 `
 
@@ -43,7 +48,7 @@ const Input = props => {
 
 Input.propTypes = {
   value: PropTypes.string,
-  type: PropTypes.oneOf(['text', 'hidden', 'email']),
+  type: PropTypes.oneOf(['text', 'hidden', 'email', 'password']),
   onChange: PropTypes.func,
   className: PropTypes.string,
   placeholder: PropTypes.string,
