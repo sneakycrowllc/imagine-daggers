@@ -4,6 +4,7 @@ import styled from '@emotion/styled';
 
 const StyledButton = styled.button`
   min-width: 100px;
+  height: 36px;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -21,24 +22,28 @@ const StyledButton = styled.button`
     cursor: pointer;
     background-color: ${props => props.theme.colors.CARDINAL};
   }
-`
+`;
 
-const Button = (props) => {
+const Button = props => {
   return (
-    <StyledButton type={props.type}>{props.isLoading ? 'Loading...' : props.label}</StyledButton>
-  )
-}
+    <StyledButton onClick={props.onClick} type={props.type}>
+      {props.isLoading ? 'Loading...' : props.label}
+    </StyledButton>
+  );
+};
 
 Button.propTypes = {
   type: PropTypes.oneOf(['submit', 'button']),
   label: PropTypes.string,
-  isLoading: PropTypes.bool
-}
+  isLoading: PropTypes.bool,
+  onClick: PropTypes.func
+};
 
 Button.defaultProps = {
   type: 'button',
   label: 'Button',
-  isLoading: false
-}
+  isLoading: false,
+  onClick: () => null
+};
 
 export default Button;
