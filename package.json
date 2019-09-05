@@ -5,7 +5,9 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "dependencies": {
     "@emotion/core": "^10.0.16",
@@ -22,8 +24,15 @@
     "unique-names-generator": "^3.0.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.5.5",
+    "@storybook/addon-actions": "^5.1.11",
+    "@storybook/addon-links": "^5.1.11",
+    "@storybook/addons": "^5.1.11",
+    "@storybook/cli": "^5.1.11",
+    "@storybook/react": "^5.1.11",
     "@types/node": "^12.7.3",
     "@types/react": "^16.9.2",
+    "babel-loader": "^8.0.6",
     "typescript": "^3.6.2"
   }
 }
