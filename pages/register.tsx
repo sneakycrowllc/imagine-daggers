@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styled from '@emotion/styled';
 
-import Layout from '../components/Layout';
+import Layout from '../components/layout';
 import Input from '../components/Form/input';
 import Button from '../components/Form/button';
 import { generateName, generatePassword } from '../lib/stringGenerator';
