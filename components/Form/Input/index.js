@@ -4,12 +4,14 @@ import styled from '@emotion/styled';
 import { darken } from 'polished';
 
 const StyledInput = styled.div`
-  width: auto;
+  max-width: 100%;
   border-radius: 2px;
   position: relative;
   border: 1px solid ${props => props.theme.colors.SILVERRUST};
   padding: 10px;
   min-height: 24px;
+  margin-top: 30px;
+  display: block;
   label {
     font-weight: bold;
     transform: translateY(-16px);

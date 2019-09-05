@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from '@emotion/styled';
 
-import Link from '../components/link';
+import Link from '../components/Link';
 
 const Navigation = () => {
   return (

@@ -3,8 +3,8 @@ import { Global, css } from '@emotion/core';
 import emotionReset from 'emotion-reset';
 import { ThemeProvider } from 'emotion-theming';
 
-import theme from '../lib/theme';
-import Navigation from '../containers/navigation';
+import theme from '../../lib/theme';
+import Navigation from '../../containers/navigation';
 
 // Function that returns all colors in the theme as CSS variables
 // This is for cases where we might not want to make a Styled component to access a var

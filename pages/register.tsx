@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import styled from '@emotion/styled';
 
-import Layout from '../components/layout';
-import Input from '../components/Form/input';
-import Button from '../components/Form/button';
+import Layout from '../components/Layout';
+import Input from '../components/Form/Input';
+import Button from '../components/Form/Button';
 import { generateName, generatePassword } from '../lib/stringGenerator';
 
 const Register = () => {
