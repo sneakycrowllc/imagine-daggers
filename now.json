@@ -1,0 +1,12 @@
+{
+  "env": {
+    "graphql_api_key": "@graphql_api_key",
+    "graphql_api_url": "@graphql_api_url"
+  },
+  "build": {
+    "env": {
+      "graphql_api_key": "@graphql_api_key",
+      "graphql_api_url": "@graphql_api_url"
+    }
+  }
+}

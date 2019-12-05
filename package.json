@@ -10,21 +10,24 @@
     "build-storybook": "build-storybook"
   },
   "dependencies": {
+    "@apollo/react-hooks": "^3.1.3",
     "@emotion/core": "^10.0.16",
     "@emotion/styled": "^10.0.15",
+    "apollo-cache-inmemory": "^1.6.3",
+    "apollo-client": "^2.6.4",
+    "apollo-link-context": "^1.0.19",
+    "apollo-link-http": "^1.5.16",
     "babel-plugin-emotion": "^10.0.17",
-    "cross-fetch": "^3.0.4",
+    "babel-plugin-styled-components": "^1.10.6",
+    "bcrypt": "^3.0.7",
     "dotenv": "^8.1.0",
-    "emotion-reset": "^2.0.2",
-    "emotion-theming": "^10.0.14",
-    "graphql-react": "^9.1.0",
+    "graphql": "^14.5.8",
+    "graphql-tag": "^2.10.1",
     "next": "9.0.5",
-    "next-graphql-react": "^5.1.0",
-    "niceware": "^1.0.7",
-    "polished": "^3.4.1",
+    "next-with-apollo": "^4.3.0",
     "react": "16.9.0",
     "react-dom": "16.9.0",
-    "unique-names-generator": "^3.0.0"
+    "styled-components": "^4.4.1"
   },
   "devDependencies": {
     "@babel/core": "^7.5.5",
