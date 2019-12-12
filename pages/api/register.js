@@ -1,4 +1,5 @@
 import bcrypt from 'bcrypt';
+import jwt from 'jsonwebtoken';
 import { graphQLClient } from '../../utils/apollo-client';
 import { NEW_USER_MUTATION } from '../../lib/mutations';
 
@@ -18,7 +19,23 @@ const registerHandler = (req, res) => {
     // Send mutation
     graphQLClient
       .mutate({ mutation: NEW_USER_MUTATION, variables: newUser })
-      .then(mutationResponse => res.json(mutationResponse));
+      .then(mutationResponse => {
+        console.log(mutationResponse);
+        const userInResponse = mutationResponse.data.insert_imaginedagger_users.returning[0];
+        const tokenData = {
+          user: userInResponse
+        };
+        console.log(tokenData);
+        const token = jwt.sign(
+          {
+            data: tokenData
+          },
+          process.env.json_secret,
+          { expiresIn: '1h' }
+        );
+        return res.json({ token, user: tokenData.user });
+      })
+      .catch(() => res.status(500).json({ error: 'Internal Server Error' }));
   });
 };
 
