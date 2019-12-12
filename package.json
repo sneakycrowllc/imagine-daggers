@@ -1,54 +1,45 @@
 {
-  "name": "imagine-daggers",
+  "name": "imagine-daggers-next",
   "version": "0.1.0",
-  "description": "A platform for turning your sessions into stories",
-  "main": "src/index.js",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack --mode production",
-    "start": "webpack-dev-server --hot --mode development"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "storybook": "start-storybook -s ./ -p 6006",
+    "build-storybook": "build-storybook"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/sneakycrow/imagine-daggers.git"
-  },
-  "keywords": [
-    "blog",
-    "role",
-    "playing",
-    "rpg",
-    "dnd",
-    "imagine",
-    "daggers"
-  ],
-  "author": "Zachary E Sohovich",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/sneakycrow/imagine-daggers/issues"
-  },
-  "homepage": "https://github.com/sneakycrow/imagine-daggers#readme",
   "dependencies": {
-    "@emotion/core": "^10.0.15",
+    "@apollo/react-hooks": "^3.1.3",
+    "@emotion/core": "^10.0.16",
     "@emotion/styled": "^10.0.15",
-    "dotenv-webpack": "^1.7.0",
-    "emotion-reset": "^2.0.2",
-    "emotion-theming": "^10.0.14",
-    "file-loader": "^4.1.0",
-    "polished": "^3.4.1",
-    "prop-types": "^15.7.2",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
-    "url-loader": "^2.1.0"
+    "apollo-cache-inmemory": "^1.6.3",
+    "apollo-client": "^2.6.4",
+    "apollo-link-context": "^1.0.19",
+    "apollo-link-http": "^1.5.16",
+    "babel-plugin-emotion": "^10.0.17",
+    "babel-plugin-styled-components": "^1.10.6",
+    "bcrypt": "^3.0.7",
+    "dotenv": "^8.1.0",
+    "graphql": "^14.5.8",
+    "graphql-tag": "^2.10.1",
+    "jsonwebtoken": "^8.5.1",
+    "next": "9.0.5",
+    "next-with-apollo": "^4.3.0",
+    "react": "16.9.0",
+    "react-dom": "16.9.0",
+    "styled-components": "^4.4.1"
   },
   "devDependencies": {
     "@babel/core": "^7.5.5",
-    "@babel/preset-env": "^7.5.5",
-    "@babel/preset-react": "^7.0.0",
+    "@storybook/addon-actions": "^5.1.11",
+    "@storybook/addon-links": "^5.1.11",
+    "@storybook/addons": "^5.1.11",
+    "@storybook/cli": "^5.1.11",
+    "@storybook/react": "^5.1.11",
+    "@types/node": "^12.7.3",
+    "@types/react": "^16.9.2",
     "babel-loader": "^8.0.6",
-    "html-loader": "^0.5.5",
-    "html-webpack-plugin": "^3.2.0",
-    "webpack": "^4.39.1",
-    "webpack-cli": "^3.3.6",
-    "webpack-dev-server": "^3.7.2"
+    "typescript": "^3.6.2"
   }
 }
