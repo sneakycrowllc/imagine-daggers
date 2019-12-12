@@ -23,7 +23,10 @@ export const graphQLClient = new ApolloClient({
   link: authLink.concat(httpLink),
   cache: new InMemoryCache({
     addTypename: false
-  })
+  }),
+  onError: error => {
+    return true
+  }
 });
 
 export default withApollo(
