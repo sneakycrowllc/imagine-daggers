@@ -20,12 +20,10 @@ const registerHandler = (req, res) => {
     graphQLClient
       .mutate({ mutation: NEW_USER_MUTATION, variables: newUser })
       .then(mutationResponse => {
-        console.log(mutationResponse);
         const userInResponse = mutationResponse.data.insert_imaginedagger_users.returning[0];
         const tokenData = {
           user: userInResponse
         };
-        console.log(tokenData);
         const token = jwt.sign(
           {
             data: tokenData
