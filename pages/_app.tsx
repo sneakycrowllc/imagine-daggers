@@ -1,10 +1,8 @@
 import App from 'next/app';
-import React, { Fragment } from 'react';
+import React from 'react';
 import { createGlobalStyle } from 'styled-components';
-import { ApolloProvider } from '@apollo/react-hooks';
 
 import ThemeToggler from '../components/themeToggler';
-import withData from '../utils/apollo-client';
 
 const GlobalStyle = createGlobalStyle`
   html {
@@ -59,17 +57,16 @@ const GlobalStyle = createGlobalStyle`
     }
   }
   a {
-    color: ${props => props.theme.palette.black};
+    color: ${props => props.theme.palette.darkness};
     text-decoration: none;
     transition: color 0.25s ease-in-out;
-    &:hover {
-      color: ${props => props.theme.palette.green};
-    }
   }
 `;
 
 class MyApp extends App {
-  static async getInitialProps({ Component, router, ctx }) {
+  // @ts-ignore
+  static async getInitialProps(props) {
+    const { Component, ctx } = props;
     let pageProps = {};
 
     if (Component.getInitialProps) {
@@ -80,16 +77,14 @@ class MyApp extends App {
   }
 
   render() {
-    const { Component, pageProps, apollo } = this.props;
+    const { Component, pageProps } = this.props;
     return (
-      <ApolloProvider client={apollo}>
-        <ThemeToggler>
-          <GlobalStyle />
-          <Component {...pageProps} />
-        </ThemeToggler>
-      </ApolloProvider>
+      <ThemeToggler>
+        <GlobalStyle />
+        <Component {...pageProps} />
+      </ThemeToggler>
     );
   }
 }
 
-export default withData(MyApp);
+export default MyApp;
