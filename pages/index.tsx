@@ -7,6 +7,7 @@ import FormButton from '../components/formButton';
 const Home = () => {
   const [username, setUsername] = useState<string>('');
   const [password, setPassword] = useState<string>('');
+  const [email, setEmail] = useState<string>('');
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -35,6 +36,13 @@ const Home = () => {
             value={username}
             onChange={(event: ChangeEvent<HTMLInputElement>) => setUsername(event.target.value)}
             placeholder="agent_agentson93"
+          />
+          <Input
+            name="email"
+            label="Email"
+            value={email}
+            onChange={(event: ChangeEvent<HTMLInputElement>) => setEmail(event.target.value)}
+            placeholder="agentson93@agent.com"
           />
           <Input
             name="password"
