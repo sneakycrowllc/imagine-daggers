@@ -7,12 +7,13 @@ type TInputProps = {
   label: string;
   name: string;
   placeholder?: string;
+  type?: string;
 };
 
-const Input = ({ value, onChange, label, name, placeholder = '' }: TInputProps) => (
+const Input = ({ value, onChange, label, name, placeholder = '', type = 'text' }: TInputProps) => (
   <StyledInput>
     <label htmlFor={name}>{label}</label>
-    <input name={name} type="text" value={value} onChange={onChange} placeholder={placeholder} />
+    <input name={name} type={type} value={value} onChange={onChange} placeholder={placeholder} />
   </StyledInput>
 );
 
